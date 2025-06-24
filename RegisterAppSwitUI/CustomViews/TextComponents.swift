@@ -16,11 +16,11 @@ struct TextComponents: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .setFont(fontName: .regular, size: 16)
-                .foregroundStyle(.black.opacity(60))
+                .setFont(fontName: .semiBold, size: 16)
+                .foregroundStyle(.black.opacity(0.6))
             
             TextField(placeHolder, text: $txt)
-                .setFont(fontName: .regular, size: 16)
+                .setFont(fontName: .semiBold, size: 16)
             
             Divider()
         }

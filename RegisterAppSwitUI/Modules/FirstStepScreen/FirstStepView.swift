@@ -34,6 +34,7 @@ struct FirstStepView: View {
                         MainButton(buttonTitle: String(localized: "PROCEED")) {
                             // MARK: - HERE: - do action.
                         }
+                        .padding(.bottom,10)
                     }
                     .padding()
                     .padding(.top,20)

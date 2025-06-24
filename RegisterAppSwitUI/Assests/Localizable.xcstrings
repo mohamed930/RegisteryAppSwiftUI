@@ -95,7 +95,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Step %1$@ of %2$@"
           }
         }

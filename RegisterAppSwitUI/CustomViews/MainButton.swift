@@ -26,7 +26,7 @@ struct MainButton: View {
                 Text(buttonTitle)
                     .padding()
                     .foregroundStyle(.white)
-                    .setFont(fontName: .medium, size: 16)
+                    .setFont(fontName: .semiBold, size: 16)
             }
             
             
