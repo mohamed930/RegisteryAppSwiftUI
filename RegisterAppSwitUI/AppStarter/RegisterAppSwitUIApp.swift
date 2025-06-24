@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct RegisterAppSwitUIApp: App {
+    
+    @StateObject private var navManager = NavigationManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
+                .environmentObject(navManager)
         }
     }
 }
