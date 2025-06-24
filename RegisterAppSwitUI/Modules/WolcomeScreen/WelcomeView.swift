@@ -47,6 +47,7 @@ struct WelcomeView: View {
 
                     
                 }
+                .padding(.horizontal)
             }
             .navigationDestination(for: NavigationManager.Route.self) { route in
                 switch route {

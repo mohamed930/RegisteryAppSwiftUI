@@ -22,7 +22,6 @@ struct CustomNavigation<Content: View>: View {
         ZStack {
             content()
         }
-        .padding()
         .toolbarBackground(Color._00925_E, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
