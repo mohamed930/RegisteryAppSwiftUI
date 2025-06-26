@@ -45,7 +45,7 @@ struct SecondStepView: View {
                         }
                         
                         MainButton(buttonTitle: String(localized: "PROCEED")) {
-                            // MARK: - HERE: - action.
+                            navManager.path.append(.thirdStep)
                         }
                         .padding(.bottom,23)
                         .padding(.horizontal,10)
@@ -63,4 +63,5 @@ struct SecondStepView: View {
 
 #Preview {
     SecondStepView()
+        .environmentObject(NavigationManager())
 }

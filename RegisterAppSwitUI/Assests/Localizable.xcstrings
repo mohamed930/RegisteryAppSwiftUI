@@ -1,6 +1,36 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Average of Credit Transaction Last 6 Months" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متوسط معاملة الائتمان في الأشهر الستة الماضية"
+          }
+        }
+      }
+    },
+    "Average Sales Transactions" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متوسط معاملات المبيعات"
+          }
+        }
+      }
+    },
+    "Commercial Record Information" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معلومات السجل التجاري"
+          }
+        }
+      }
+    },
     "Commercial Record Number" : {
       "localizations" : {
         "ar" : {
@@ -17,6 +47,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "مسح السجل التجاري"
+          }
+        }
+      }
+    },
+    "Corporate Establishment Datee" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ تأسيس الشركة"
+          }
+        }
+      }
+    },
+    "Corporate Main Activity" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النشاط الرئيسي للشركة"
+          }
+        }
+      }
+    },
+    "Corporate Name" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسم الشركة"
+          }
+        }
+      }
+    },
+    "Corporate Short Name" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الاسم المختصر للشركة"
+          }
+        }
+      }
+    },
+    "CR Expiry Date" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ انتهاء السجل التجاري"
           }
         }
       }
@@ -38,12 +118,102 @@
         }
       }
     },
+    "Please input average of credit transaction in last 6 months" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال متوسط المعاملة الائتمانية في الأشهر الستة الماضية"
+          }
+        }
+      }
+    },
+    "Please input average sales transactions" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال متوسط معاملات المبيعات"
+          }
+        }
+      }
+    },
+    "Please input corporate main activity" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال النشاط الرئيسي للشركة"
+          }
+        }
+      }
+    },
+    "Please input corporate short name" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال الاسم المختصر للشركة"
+          }
+        }
+      }
+    },
+    "Please input CR expiry date" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجي إدخال تاريخ انتهاء السجل التجاري"
+          }
+        }
+      }
+    },
+    "Please input total annual revenue" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال إجمالي الإيرادات السنوية"
+          }
+        }
+      }
+    },
+    "Please input total liabilities in other corporates" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال إجمالي الالتزامات في الشركات الأخرى"
+          }
+        }
+      }
+    },
     "Please input your commercial Record number" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "يرجى إدخال رقم السجل التجاري الخاص بك"
+          }
+        }
+      }
+    },
+    "Please input your corporate establishment date" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال تاريخ تأسيس شركتك"
+          }
+        }
+      }
+    },
+    "Please input your corporate name" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى إدخال اسم شركتك"
           }
         }
       }
@@ -117,6 +287,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Step %1$@ of %2$@"
+          }
+        }
+      }
+    },
+    "Total Annual Revenue" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إجمالي الإيرادات السنوية"
+          }
+        }
+      }
+    },
+    "Total Liabilities in Other Corporates" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إجمالي الالتزامات في الشركات الأخرى"
           }
         }
       }

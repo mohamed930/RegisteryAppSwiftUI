@@ -14,6 +14,7 @@ class NavigationManager: ObservableObject {
     enum Route: Hashable {
         case firstStep
         case secondStep
+        case thirdStep
     }
 
     func push(_ route: Route) {
