@@ -11,6 +11,16 @@
         }
       }
     },
+    "Commercial Record Scan" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسح السجل التجاري"
+          }
+        }
+      }
+    },
     "Initiation" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -81,6 +91,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "تسجيل"
+          }
+        }
+      }
+    },
+    "Scan CR Here" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "امسح السجل التجاري هنا"
           }
         }
       }

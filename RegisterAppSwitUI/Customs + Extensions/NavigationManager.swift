@@ -13,6 +13,7 @@ class NavigationManager: ObservableObject {
 
     enum Route: Hashable {
         case firstStep
+        case secondStep
     }
 
     func push(_ route: Route) {

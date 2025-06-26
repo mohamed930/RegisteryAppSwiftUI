@@ -40,7 +40,7 @@ struct WelcomeView: View {
                     
                     
                     
-                    MainButton(buttonTitle: "PROCEED") {
+                    MainButton(buttonTitle: String(localized: "PROCEED")) {
                         navManager.push(.firstStep)
                     }
                     .padding(.bottom,14)
@@ -48,11 +48,13 @@ struct WelcomeView: View {
                     
                 }
                 .padding(.horizontal)
-            }
-            .navigationDestination(for: NavigationManager.Route.self) { route in
-                switch route {
-                    case .firstStep:
-                        FirstStepView()
+                .navigationDestination(for: NavigationManager.Route.self) { route in
+                    switch route {
+                        case .firstStep:
+                            FirstStepView()
+                        case .secondStep:
+                            SecondStepView()
+                    }
                 }
             }
         }

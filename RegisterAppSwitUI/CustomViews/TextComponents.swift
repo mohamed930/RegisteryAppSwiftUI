@@ -12,6 +12,14 @@ struct TextComponents: View {
     let title: String
     let placeHolder: String
     @Binding var txt: String
+    var keyBoardType: UIKeyboardType = .default
+    
+    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default) {
+        self.title = title
+        self.placeHolder = placeHolder
+        self._txt = txt
+        self.keyBoardType = keyBoardType
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,6 +29,7 @@ struct TextComponents: View {
             
             TextField(placeHolder, text: $txt)
                 .setFont(fontName: .semiBold, size: 16)
+                .keyboardType(keyBoardType)
             
             Divider()
         }
