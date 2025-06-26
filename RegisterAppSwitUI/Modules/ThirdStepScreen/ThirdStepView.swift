@@ -59,7 +59,8 @@ struct ThirdStepView: View {
                             
                             TextComponents(title: String(localized: "Corporate Short Name"),
                                            placeHolder: String(localized: "Please input corporate short name"),
-                                           txt: $viewmodel.corperateShortName)
+                                           txt: $viewmodel.corperateShortName,
+                                           maximumChar: 20)
                             .padding(.bottom,14)
                             
                             MainButton(buttonTitle: String(localized: "PROCEED")) {

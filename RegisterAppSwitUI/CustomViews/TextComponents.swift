@@ -13,12 +13,14 @@ struct TextComponents: View {
     let placeHolder: String
     @Binding var txt: String
     var keyBoardType: UIKeyboardType = .default
+    var maximumChar: Int
     
-    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default) {
+    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200) {
         self.title = title
         self.placeHolder = placeHolder
         self._txt = txt
         self.keyBoardType = keyBoardType
+        self.maximumChar = maximumChar
     }
     
     var body: some View {
@@ -30,6 +32,14 @@ struct TextComponents: View {
             TextField(placeHolder, text: $txt)
                 .setFont(fontName: .semiBold, size: 16)
                 .keyboardType(keyBoardType)
+                .onChange(of: txt) { newValue in
+                    
+                    if keyBoardType == .decimalPad {
+                        txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == ".")})
+                    }
+                    
+                    txt = String(newValue.prefix(maximumChar))
+                }
             
             Divider()
         }

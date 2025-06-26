@@ -23,7 +23,7 @@ struct FirstStepView: View {
                 
                 WhiteBox {
                     VStack(spacing: 26) {
-                        TextComponents(title: String(localized: "Qatar ID Number"), placeHolder: String(localized: "Please input your Qatar ID Number"), txt: $qid,keyBoardType: .asciiCapableNumberPad)
+                        TextComponents(title: String(localized: "Qatar ID Number"), placeHolder: String(localized: "Please input your Qatar ID Number"), txt: $qid,keyBoardType: .asciiCapableNumberPad,maximumChar: 11)
                         
                         TextComponents(title: String(localized: "Commercial Record Number"), placeHolder: String(localized: "Please input your commercial Record number"), txt: $commercialRecord,keyBoardType: .numbersAndPunctuation)
                         

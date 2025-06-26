@@ -13,7 +13,7 @@ struct SecondStepView: View {
     var body: some View {
         
         CustomNavigation {
-            VStack {
+            VStack(spacing: 13) {
                 StepView(stepNumber: "2", totalSteps: "6", message: String(localized: "Commercial Record Scan"))
                 
                 WhiteBox {
@@ -35,13 +35,27 @@ struct SecondStepView: View {
                         .padding(.horizontal)
                         .frame(maxHeight: .infinity)
                         .overlay {
-                            CornerDecoration(image: .corner, alignment: .topLeading, rotation: .degrees(0))
                             
-                            CornerDecoration(alignment: .topTrailing, rotation: .degrees(0))
+                            let languageCode = Locale.current.language.languageCode
                             
-                            CornerDecoration(alignment: .bottomLeading, rotation: .degrees(180))
-                            
-                            CornerDecoration(alignment: .bottomTrailing, rotation: .degrees(90))
+                            if languageCode == "en" {
+                                CornerDecoration(image: .corner, alignment: .topLeading, rotation: .degrees(0))
+                                
+                                CornerDecoration(alignment: .topTrailing, rotation: .degrees(0))
+                                
+                                CornerDecoration(alignment: .bottomLeading, rotation: .degrees(180))
+                                
+                                CornerDecoration(alignment: .bottomTrailing, rotation: .degrees(90))
+                            }
+                            else {
+                                CornerDecoration(alignment: .topLeading, rotation: .degrees(0))
+                                
+                                CornerDecoration(image: .corner, alignment: .topTrailing, rotation: .degrees(0))
+                                
+                                CornerDecoration(alignment: .bottomTrailing, rotation: .degrees(180))
+                                
+                                CornerDecoration(alignment: .bottomLeading, rotation: .degrees(-90))
+                            }
                         }
                         
                         MainButton(buttonTitle: String(localized: "PROCEED")) {
