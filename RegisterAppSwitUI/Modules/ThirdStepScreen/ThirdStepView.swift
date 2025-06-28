@@ -27,11 +27,13 @@ struct ThirdStepView: View {
                             
                             TextComponents(title: String(localized: "Corporate Establishment Datee"),
                                            placeHolder: String(localized: "Please input your corporate establishment date"),
-                                           txt: $viewmodel.corperateEstablishDate)
+                                           txt: $viewmodel.corperateEstablishDate,
+                                           calenderType: true)
                             
                             TextComponents(title: String(localized: "CR Expiry Date"),
                                            placeHolder: String(localized: "Please input CR expiry date"),
-                                           txt: $viewmodel.corperateCREpiryDate)
+                                           txt: $viewmodel.corperateCREpiryDate,
+                                           calenderType: true)
                             
                             TextComponents(title: String(localized: "Corporate Main Activity"),
                                            placeHolder: String(localized: "Please input corporate main activity"),
@@ -70,8 +72,11 @@ struct ThirdStepView: View {
                         }
                         .padding(.vertical,23)
                         .padding(.horizontal)
-                    }
-                }
+                    } // MARK: - ScrollView
+                    
+                    
+                } // MARK: - WhiteBox
+                .frame(maxWidth: .infinity)
                 
                 Spacer()
             }

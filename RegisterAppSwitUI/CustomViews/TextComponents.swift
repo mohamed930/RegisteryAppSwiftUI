@@ -14,13 +14,15 @@ struct TextComponents: View {
     @Binding var txt: String
     var keyBoardType: UIKeyboardType = .default
     var maximumChar: Int
+    var calenderType: Bool
     
-    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200) {
+    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false) {
         self.title = title
         self.placeHolder = placeHolder
         self._txt = txt
         self.keyBoardType = keyBoardType
         self.maximumChar = maximumChar
+        self.calenderType = calenderType
     }
     
     var body: some View {
@@ -29,16 +31,38 @@ struct TextComponents: View {
                 .setFont(fontName: .semiBold, size: 16)
                 .foregroundStyle(.black.opacity(0.6))
             
-            TextField(placeHolder, text: $txt)
-                .setFont(fontName: .semiBold, size: 16)
-                .keyboardType(keyBoardType)
-                .onChange(of: txt) { newValue in
+            
+                HStack {
                     
-                    if keyBoardType == .decimalPad {
-                        txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == ".")})
+                    if calenderType {
+                        DatePickerTextFieldComponents(txt: $txt, placeHolder: placeHolder)
+                            .frame(maxWidth: .infinity)
+                            .padding(.leading,32)
+                        
+                        Spacer()
+                        
+                        Image(.calender)
+//                            .padding(.trailing, 10)
                     }
                     
-                    txt = String(newValue.prefix(maximumChar))
+                    else {
+                        
+                        TextField(placeHolder, text: $txt)
+                            .setFont(fontName: .semiBold, size: 16)
+                            .keyboardType(keyBoardType)
+                            .onChange(of: txt) { newValue in
+                                
+                                if keyBoardType == .decimalPad {
+                                    txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == ".")})
+                                    
+                                }
+                                
+                                if keyBoardType != .decimalPad {
+                                    txt = String(newValue.prefix(maximumChar))
+                                }
+                            }
+                    }
+                    
                 }
             
             Divider()
@@ -48,5 +72,5 @@ struct TextComponents: View {
 
 #Preview {
     @State var text = ""
-    TextComponents(title: "Qatar ID Number", placeHolder: "Please input your Qatar ID Number", txt: $text)
+    TextComponents(title: "Qatar ID Number", placeHolder: "Please input your Qatar ID Number", txt: $text,calenderType: true)
 }
