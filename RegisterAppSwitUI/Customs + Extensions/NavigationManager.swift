@@ -15,6 +15,7 @@ class NavigationManager: ObservableObject {
         case firstStep
         case secondStep
         case thirdStep
+        case forthStep
     }
 
     func push(_ route: Route) {

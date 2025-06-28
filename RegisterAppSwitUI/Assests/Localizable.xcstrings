@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "Average of Credit Transaction Last 6 Months" : {
       "localizations" : {
         "ar" : {
@@ -97,6 +100,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "تاريخ انتهاء السجل التجاري"
+          }
+        }
+      }
+    },
+    "ID Scan" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسح الهوية"
           }
         }
       }

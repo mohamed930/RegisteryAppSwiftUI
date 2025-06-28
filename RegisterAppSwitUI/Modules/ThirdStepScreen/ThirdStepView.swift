@@ -10,6 +10,7 @@ import SwiftUI
 struct ThirdStepView: View {
     
     @StateObject var viewmodel = ThirdStepViewModel()
+    @EnvironmentObject var naviManeger: NavigationManager
     
     var body: some View {
         
@@ -66,8 +67,7 @@ struct ThirdStepView: View {
                             .padding(.bottom,14)
                             
                             MainButton(buttonTitle: String(localized: "PROCEED")) {
-                                // MARK: - HERE: - Button action.
-                                
+                                naviManeger.push(.forthStep)
                             }
                         }
                         .padding(.vertical,23)
