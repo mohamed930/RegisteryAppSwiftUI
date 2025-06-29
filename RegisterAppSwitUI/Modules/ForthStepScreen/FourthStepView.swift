@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FourthStepView: View {
+    
+    @EnvironmentObject var naviManeger: NavigationManager
+    
     var body: some View {
         
         CustomNavigation {
@@ -17,7 +20,7 @@ struct FourthStepView: View {
                 
                 WhiteBox {
                     
-                    VStack(spacing: 35) {
+                    VStack {
                         
                         WhiteBox {
                             Text("Scan front side")
@@ -25,6 +28,10 @@ struct FourthStepView: View {
                                 .foregroundStyle(Color.A_5_A_5_A_5)
                         }
                         .frame(maxHeight: 340)
+                        .overlay {
+                            addOverlay()
+                        }
+                        .padding(.bottom,48)
                         
                         WhiteBox {
                             Text("Scan Back side")
@@ -32,18 +39,21 @@ struct FourthStepView: View {
                                 .foregroundStyle(Color.A_5_A_5_A_5)
                         }
                         .frame(maxHeight: 340)
+                        .overlay {
+                            addOverlay()
+                        }
+                        .padding(.bottom,48)
                         
                         Spacer()
                         
                         MainButton(buttonTitle: String(localized: "PROCEED")) {
-                            // MARK: - HERE: - Handle action here.
+                            naviManeger.push(.fifthStep)
                         }
+                        .padding(.horizontal,23)
+                        .padding(.bottom,20)
                         
                     }
-                    .padding(.horizontal,23)
                     .padding(.top,57)
-                    
-                    
                 }
                 
                 Spacer()

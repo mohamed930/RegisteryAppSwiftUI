@@ -58,6 +58,8 @@ struct WelcomeView: View {
                             ThirdStepView()
                         case .forthStep:
                             FourthStepView()
+                        case .fifthStep:
+                            FifthStepView()
                     }
                 }
             }

@@ -1,7 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
+    "Address - Building" : {
+
+    },
+    "Address - Street" : {
+
+    },
+    "Address - Zone" : {
 
     },
     "Average of Credit Transaction Last 6 Months" : {
@@ -54,7 +60,7 @@
         }
       }
     },
-    "Corporate Establishment Datee" : {
+    "Corporate Establishment Date" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -104,6 +110,18 @@
         }
       }
     },
+    "Date of Birth" : {
+
+    },
+    "Email Address" : {
+
+    },
+    "Employer" : {
+
+    },
+    "ID Expiry Date" : {
+
+    },
     "ID Scan" : {
       "localizations" : {
         "ar" : {
@@ -130,6 +148,24 @@
           }
         }
       }
+    },
+    "Mobile Number" : {
+
+    },
+    "Name" : {
+
+    },
+    "Nationality" : {
+
+    },
+    "Occupation" : {
+
+    },
+    "Passport Expiry Date" : {
+
+    },
+    "Passport Number" : {
+
     },
     "Please input average of credit transaction in last 6 months" : {
       "localizations" : {
@@ -211,16 +247,6 @@
         }
       }
     },
-    "Please input your corporate establishment date" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يرجى إدخال تاريخ تأسيس شركتك"
-          }
-        }
-      }
-    },
     "Please input your corporate name" : {
       "localizations" : {
         "ar" : {
@@ -278,12 +304,32 @@
         }
       }
     },
+    "Scan Back side" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسح الجانب الخلفي"
+          }
+        }
+      }
+    },
     "Scan CR Here" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "امسح السجل التجاري هنا"
+          }
+        }
+      }
+    },
+    "Scan front side" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسح الجانب الأمامي"
           }
         }
       }
@@ -320,6 +366,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "إجمالي الالتزامات في الشركات الأخرى"
+          }
+        }
+      }
+    },
+    "User Information" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معلومات المستخدم"
           }
         }
       }

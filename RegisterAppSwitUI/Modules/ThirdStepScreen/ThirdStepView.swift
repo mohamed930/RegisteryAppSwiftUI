@@ -26,8 +26,8 @@ struct ThirdStepView: View {
                                            placeHolder: String(localized: "Please input your corporate name"),
                                            txt: $viewmodel.corperateName)
                             
-                            TextComponents(title: String(localized: "Corporate Establishment Datee"),
-                                           placeHolder: String(localized: "Please input your corporate establishment date"),
+                            TextComponents(title: String(localized: "Corporate Establishment Date"),
+                                           placeHolder: String(localized: "Corporate Establishment Date"),
                                            txt: $viewmodel.corperateEstablishDate,
                                            calenderType: true)
                             

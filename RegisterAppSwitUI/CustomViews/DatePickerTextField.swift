@@ -100,7 +100,7 @@ struct DatePickerTextFieldComponents: View {
         
         DatePickerTextField(placeholder: placeHolder, dateFormat: "dd/MM/yyyy", selectedDate: $txt)
             .frame(height: 24)
-            .padding(.horizontal,-32)
+            .padding(.horizontal,-52)
         
     }
 }

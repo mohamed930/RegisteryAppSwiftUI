@@ -37,7 +37,7 @@ struct TextComponents: View {
                     if calenderType {
                         DatePickerTextFieldComponents(txt: $txt, placeHolder: placeHolder)
                             .frame(maxWidth: .infinity)
-                            .padding(.leading,32)
+                            .padding(.leading,52)
                         
                         Spacer()
                         
@@ -52,12 +52,12 @@ struct TextComponents: View {
                             .keyboardType(keyBoardType)
                             .onChange(of: txt) { newValue in
                                 
-                                if keyBoardType == .decimalPad {
+                                if keyBoardType == .decimalPad || keyBoardType == .phonePad {
                                     txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == ".")})
                                     
                                 }
                                 
-                                if keyBoardType != .decimalPad {
+                                if keyBoardType != .decimalPad && keyBoardType != .phonePad {
                                     txt = String(newValue.prefix(maximumChar))
                                 }
                             }
