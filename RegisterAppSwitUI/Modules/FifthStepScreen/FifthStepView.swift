@@ -31,7 +31,8 @@ struct FifthStepView: View {
                                                txt: $viewmodel.components[index].value,
                                                keyBoardType: model.keyBoardType,
                                                maximumChar: model.minimumCharacter,
-                                               calenderType: model.calenderType)
+                                               calenderType: model.calenderType,
+                                               masked: model.masked)
                             }
                             
                             MainButton(buttonTitle: String(localized: "PROCEED")) {

@@ -15,14 +15,17 @@ struct TextComponents: View {
     var keyBoardType: UIKeyboardType = .default
     var maximumChar: Int
     var calenderType: Bool
+    var masked: Bool
+    @FocusState private var isTextFieldFocused: Bool
     
-    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false) {
+    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false,masked: Bool = false) {
         self.title = title
         self.placeHolder = placeHolder
         self._txt = txt
         self.keyBoardType = keyBoardType
         self.maximumChar = maximumChar
         self.calenderType = calenderType
+        self.masked = masked
     }
     
     var body: some View {
@@ -53,12 +56,20 @@ struct TextComponents: View {
                             .onChange(of: txt) { newValue in
                                 
                                 if keyBoardType == .decimalPad || keyBoardType == .phonePad {
-                                    txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == ".")})
+                                    txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == "." || $0 == "*")})
                                     
                                 }
                                 
                                 if keyBoardType != .decimalPad && keyBoardType != .phonePad {
                                     txt = String(newValue.prefix(maximumChar))
+                                }
+                            }
+                            .focused($isTextFieldFocused)
+                            .onChange(of: isTextFieldFocused) { isFocused in
+                                print("Focus changed: \(isFocused)")
+                                if !isFocused && masked {
+                                    // end editing...
+                                    txt = keyBoardType == .phonePad ? txt.mobileMasked : txt.emailMasked
                                 }
                             }
                     }
@@ -72,5 +83,5 @@ struct TextComponents: View {
 
 #Preview {
     @State var text = ""
-    TextComponents(title: "Qatar ID Number", placeHolder: "Please input your Qatar ID Number", txt: $text,calenderType: true)
+    TextComponents(title: "Qatar ID Number", placeHolder: "Please input your Qatar ID Number", txt: $text,calenderType: false,masked: true)
 }

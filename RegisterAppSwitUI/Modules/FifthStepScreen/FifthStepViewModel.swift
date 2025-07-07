@@ -14,13 +14,15 @@ class ComponentsModel: Identifiable {
     var keyBoardType: UIKeyboardType
     var minimumCharacter: Int
     var calenderType: Bool
+    var masked: Bool
     
-    init(name: String, value: String = "", keyBoardType: UIKeyboardType = .default, minimumCharacter: Int = 200, calenderType: Bool = false) {
+    init(name: String, value: String = "", keyBoardType: UIKeyboardType = .default, minimumCharacter: Int = 200, calenderType: Bool = false,masked: Bool = false) {
         self.name = name
         self.value = value
         self.keyBoardType = keyBoardType
         self.minimumCharacter = minimumCharacter
         self.calenderType = calenderType
+        self.masked = masked
     }
     
 }
@@ -51,8 +53,8 @@ class FifthStepViewModel: ObservableObject {
             ComponentsModel(name: String(localized: "Address - Zone")),
             ComponentsModel(name: String(localized: "Address - Street")),
             ComponentsModel(name: String(localized: "Address - Building")),
-            ComponentsModel(name: String(localized: "Mobile Number"),keyBoardType: .phonePad),
-            ComponentsModel(name: String(localized: "Email Address")),
+            ComponentsModel(name: String(localized: "Mobile Number"),keyBoardType: .phonePad,masked: true),
+            ComponentsModel(name: String(localized: "Email Address"),masked: true),
         ]
     }
 }
