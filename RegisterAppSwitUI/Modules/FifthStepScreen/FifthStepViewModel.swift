@@ -35,10 +35,21 @@ class FifthStepViewModel: ObservableObject {
     @Published var nationality: String = ""
     @Published var occupation: String = ""
     @Published var employer: String = ""
+    @Published var isActive: Bool = false
     
     @Published var components: [ComponentsModel] = Array<ComponentsModel>()
     
-   
+    @Published var otpViewModel = OTPViewModel()
+    
+    func setupOTPBinding() {
+        print("F: \(isActive)")
+        
+        withAnimation(.spring()) {
+            otpViewModel.isActive = true
+            otpViewModel.offset = 0
+        }
+    }
+    
     func buildUI() {
         components = [
             ComponentsModel(name: String(localized: "Qatar ID Number"),keyBoardType: .asciiCapableNumberPad,minimumCharacter: 11),

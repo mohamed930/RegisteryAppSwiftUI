@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%lld seconds" : {
+
+    },
     "Address - Building" : {
 
     },
@@ -29,6 +32,9 @@
           }
         }
       }
+    },
+    "CANCEL" : {
+
     },
     "Commercial Record Information" : {
       "localizations" : {
@@ -161,6 +167,9 @@
     "Occupation" : {
 
     },
+    "OTP" : {
+
+    },
     "Passport Expiry Date" : {
 
     },
@@ -217,6 +226,9 @@
         }
       }
     },
+    "Please input OTP received here" : {
+
+    },
     "Please input total annual revenue" : {
       "localizations" : {
         "ar" : {
@@ -267,6 +279,9 @@
         }
       }
     },
+    "Pleaser enter the verification code\nsent to your mobile number" : {
+
+    },
     "PROCEED" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -303,6 +318,9 @@
           }
         }
       }
+    },
+    "Resend new code" : {
+
     },
     "Scan Back side" : {
       "localizations" : {
@@ -379,6 +397,9 @@
           }
         }
       }
+    },
+    "VERIFY" : {
+
     },
     "Welcome!" : {
       "localizations" : {

@@ -10,50 +10,60 @@ import SwiftUI
 struct FifthStepView: View {
     
     @StateObject var viewmodel = FifthStepViewModel()
+    @EnvironmentObject var naviManger: NavigationManager
     
     var body: some View {
         
-        CustomNavigation {
-            
-            VStack {
+        ZStack {
+            CustomNavigation {
                 
-                StepView(stepNumber: "5", totalSteps: "6", message: String(localized: "User Information"))
-                
-                WhiteBox {
+                VStack {
                     
-                    ScrollView {
-                        VStack(spacing: 30) {
-                            
-                            ForEach(Array(viewmodel.components.enumerated()), id: \.element.id) { index, model in
+                    StepView(stepNumber: "5", totalSteps: "6", message: String(localized: "User Information"))
+                    
+                    WhiteBox {
+                        
+                        ScrollView {
+                            VStack(spacing: 30) {
                                 
-                                TextComponents(title: model.name,
-                                               placeHolder: "",
-                                               txt: $viewmodel.components[index].value,
-                                               keyBoardType: model.keyBoardType,
-                                               maximumChar: model.minimumCharacter,
-                                               calenderType: model.calenderType,
-                                               masked: model.masked)
+                                ForEach(Array(viewmodel.components.enumerated()), id: \.element.id) { index, model in
+                                    
+                                    TextComponents(title: model.name,
+                                                   placeHolder: "",
+                                                   txt: $viewmodel.components[index].value,
+                                                   keyBoardType: model.keyBoardType,
+                                                   maximumChar: model.minimumCharacter,
+                                                   calenderType: model.calenderType,
+                                                   masked: model.masked)
+                                }
+                                
+                                MainButton(buttonTitle: String(localized: "PROCEED")) {
+                                    // MARK: - HERE: - Action button here
+                                    viewmodel.setupOTPBinding()
+                                    viewmodel.isActive = true
+                                }
+                                .padding(.top,10)
+                                
                             }
-                            
-                            MainButton(buttonTitle: String(localized: "PROCEED")) {
-                                // MARK: - HERE: - Action button here
-                            }
-                            .padding(.top,10)
-                            
                         }
+                        .padding()
+                        .padding(.top,23)
+                        
                     }
-                    .padding()
-                    .padding(.top,23)
                     
+                    Spacer()
                 }
+                .background(Color.F_4_F_4_F_4)
                 
-                Spacer()
             }
-            .background(Color.F_4_F_4_F_4)
+            .onAppear {
+                viewmodel.buildUI()
+                viewmodel.setupOTPBinding()
+            }
             
-        }
-        .onAppear {
-            viewmodel.buildUI()
+            if viewmodel.isActive {
+                OTPView(viewmodel: viewmodel.otpViewModel)
+            }
         }
         
     }
@@ -61,4 +71,5 @@ struct FifthStepView: View {
 
 #Preview {
     FifthStepView()
+        .environmentObject(NavigationManager())
 }
