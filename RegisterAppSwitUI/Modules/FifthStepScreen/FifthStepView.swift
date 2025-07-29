@@ -42,6 +42,7 @@ struct FifthStepView: View {
                                     viewmodel.setupOTPBinding()
                                     viewmodel.isActive = true
                                     viewmodel.otpViewModel.action = {
+                                        viewmodel.isActive = false
                                         naviManger.path.append(.sixthStep)
                                     }
                                 }
