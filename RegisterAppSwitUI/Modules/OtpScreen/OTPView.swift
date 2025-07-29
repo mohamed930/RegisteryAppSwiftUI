@@ -90,7 +90,7 @@ struct OTPView: View {
                         
                         Button {
                             // MARK: - TODO: - HERE: - Cancel Button.
-                            
+                            viewmodel.finishOTPValidationAndNavigate()
                             
                         } label: {
                             Text("VERIFY")
@@ -125,5 +125,5 @@ struct OTPView: View {
 }
 
 #Preview {
-    OTPView(viewmodel: OTPViewModel())
+    OTPView(viewmodel: OTPViewModel(action: {}))
 }

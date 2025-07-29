@@ -41,6 +41,9 @@ struct FifthStepView: View {
                                     // MARK: - HERE: - Action button here
                                     viewmodel.setupOTPBinding()
                                     viewmodel.isActive = true
+                                    viewmodel.otpViewModel.action = {
+                                        naviManger.path.append(.sixthStep)
+                                    }
                                 }
                                 .padding(.top,10)
                                 

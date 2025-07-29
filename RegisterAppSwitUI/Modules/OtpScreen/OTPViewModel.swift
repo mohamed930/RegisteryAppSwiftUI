@@ -11,12 +11,17 @@ import Combine
 import SwiftUI
 
 class OTPViewModel: ObservableObject {
-    @Published var isActive: Bool = false
+    @Published var isActive: Bool = true
     @Published var counter = 30
     @Published var otp: String = ""
     @Published var offset: CGFloat = 1000
+    @Published var action: () -> ()
     
     var timer: Timer?
+    
+    init(action: @escaping () -> Void) {
+        self.action = action
+    }
     
 //    init(isActive: Binding<Bool>) {
 //        self._isActive = isActive
@@ -48,6 +53,11 @@ class OTPViewModel: ObservableObject {
         }
     }
 
+    func finishOTPValidationAndNavigate() {
+        closeAlert()
+        action()
+    }
+    
     deinit {
         timer?.invalidate()
     }

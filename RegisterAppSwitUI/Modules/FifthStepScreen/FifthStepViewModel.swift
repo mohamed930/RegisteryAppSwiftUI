@@ -39,7 +39,9 @@ class FifthStepViewModel: ObservableObject {
     
     @Published var components: [ComponentsModel] = Array<ComponentsModel>()
     
-    @Published var otpViewModel = OTPViewModel()
+    @Published var otpViewModel = OTPViewModel(action: {
+        
+    })
     
     func setupOTPBinding() {
         print("F: \(isActive)")
