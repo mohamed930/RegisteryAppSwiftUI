@@ -16,9 +16,10 @@ struct TextComponents: View {
     var maximumChar: Int
     var calenderType: Bool
     var masked: Bool
+    var password: Bool
     @FocusState private var isTextFieldFocused: Bool
     
-    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false,masked: Bool = false) {
+    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false,masked: Bool = false,password: Bool = false) {
         self.title = title
         self.placeHolder = placeHolder
         self._txt = txt
@@ -26,6 +27,7 @@ struct TextComponents: View {
         self.maximumChar = maximumChar
         self.calenderType = calenderType
         self.masked = masked
+        self.password = password
     }
     
     var body: some View {
@@ -50,28 +52,36 @@ struct TextComponents: View {
                     
                     else {
                         
-                        TextField(placeHolder, text: $txt)
-                            .setFont(fontName: .semiBold, size: 16)
-                            .keyboardType(keyBoardType)
-                            .onChange(of: txt) { newValue in
-                                
-                                if keyBoardType == .decimalPad || keyBoardType == .phonePad {
-                                    txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == "." || $0 == "*")})
+                        if password {
+                            SecureField(placeHolder, text: $txt)
+                                .setFont(fontName: .semiBold, size: 16)
+                        }
+                        else {
+                            TextField(placeHolder, text: $txt)
+                                .setFont(fontName: .semiBold, size: 16)
+                                .keyboardType(keyBoardType)
+                                .onChange(of: txt) { newValue in
                                     
+                                    if keyBoardType == .decimalPad || keyBoardType == .phonePad {
+                                        txt = newValue.filter({$0.isASCII && ($0.isNumber || $0 == "." || $0 == "*")})
+                                        
+                                    }
+                                    
+                                    if keyBoardType != .decimalPad && keyBoardType != .phonePad {
+                                        txt = String(newValue.prefix(maximumChar))
+                                    }
                                 }
-                                
-                                if keyBoardType != .decimalPad && keyBoardType != .phonePad {
-                                    txt = String(newValue.prefix(maximumChar))
+                                .focused($isTextFieldFocused)
+                                .onChange(of: isTextFieldFocused) { isFocused in
+                                    print("Focus changed: \(isFocused)")
+                                    if !isFocused && masked {
+                                        // end editing...
+                                        txt = keyBoardType == .phonePad ? txt.mobileMasked : txt.emailMasked
+                                    }
                                 }
-                            }
-                            .focused($isTextFieldFocused)
-                            .onChange(of: isTextFieldFocused) { isFocused in
-                                print("Focus changed: \(isFocused)")
-                                if !isFocused && masked {
-                                    // end editing...
-                                    txt = keyBoardType == .phonePad ? txt.mobileMasked : txt.emailMasked
-                                }
-                            }
+                        }
+                        
+                        
                     }
                     
                 }

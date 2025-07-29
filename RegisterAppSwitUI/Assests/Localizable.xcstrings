@@ -170,6 +170,9 @@
     "Occupation" : {
 
     },
+    "Ok" : {
+
+    },
     "OTP" : {
 
     },
@@ -177,6 +180,12 @@
 
     },
     "Passport Number" : {
+
+    },
+    "Password" : {
+
+    },
+    "Password Confirmation" : {
 
     },
     "Please input average of credit transaction in last 6 months" : {
@@ -252,6 +261,15 @@
         }
       }
     },
+    "Please input your “Password Confirmation”" : {
+
+    },
+    "Please input your “Password”" : {
+
+    },
+    "Please input your “Username”" : {
+
+    },
     "Please input your commercial Record number" : {
       "localizations" : {
         "ar" : {
@@ -321,6 +339,9 @@
           }
         }
       }
+    },
+    "Registration Completed Successfully\nPlease Login to your Account" : {
+
     },
     "Resend new code" : {
 
@@ -400,6 +421,9 @@
           }
         }
       }
+    },
+    "Username" : {
+
     },
     "VERIFY" : {
 
