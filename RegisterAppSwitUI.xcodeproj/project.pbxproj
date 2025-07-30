@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D304DFEA2E38F31400708C5D /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D304DFE92E38F31400708C5D /* RappleProgressHUD */; };
 		D319C8582E0BEC680084E865 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D319C8572E0BEC680084E865 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D319C8582E0BEC680084E865 /* IQKeyboardManagerSwift in Frameworks */,
+				D304DFEA2E38F31400708C5D /* RappleProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = RegisterAppSwitUI;
 			packageProductDependencies = (
 				D319C8572E0BEC680084E865 /* IQKeyboardManagerSwift */,
+				D304DFE92E38F31400708C5D /* RappleProgressHUD */,
 			);
 			productName = RegisterAppSwitUI;
 			productReference = D342AAE72E0A8DF90001DE90 /* RegisterAppSwitUI.app */;
@@ -116,6 +119,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				D319C8562E0BEC680084E865 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				D304DFE82E38F31400708C5D /* XCRemoteSwiftPackageReference "RappleProgressHUD" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D342AAE82E0A8DF90001DE90 /* Products */;
@@ -365,6 +369,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D304DFE82E38F31400708C5D /* XCRemoteSwiftPackageReference "RappleProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rjeprasad/RappleProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 		D319C8562E0BEC680084E865 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -376,6 +388,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D304DFE92E38F31400708C5D /* RappleProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D304DFE82E38F31400708C5D /* XCRemoteSwiftPackageReference "RappleProgressHUD" */;
+			productName = RappleProgressHUD;
+		};
 		D319C8572E0BEC680084E865 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D319C8562E0BEC680084E865 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

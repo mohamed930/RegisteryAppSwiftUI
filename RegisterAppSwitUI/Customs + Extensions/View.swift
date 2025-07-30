@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RappleProgressHUD
 
 extension View {
     
@@ -33,4 +34,25 @@ extension View {
         }
     }
     
+    func handleLoading(isLoading: Binding<Bool>) -> some View {
+        self.onChange(of: isLoading.wrappedValue) { value in
+            if value {
+                RappleActivityIndicatorView.startAnimatingWithLabel(String(localized: "Please Wait"), attributes: RappleModernAttributes)
+            } else {
+                RappleActivityIndicatorView.stopAnimation()
+            }
+        }
+    }
+    
+    // SwiftUI alert handler
+    func showAlert(title: String, description: String, isPresented: Binding<Bool>, completion: @escaping () -> ()) -> some View {
+        self.alert(isPresented: isPresented) {
+            Alert(
+                title: Text(title),
+                message: Text(description),
+                primaryButton: .cancel(Text("الغاء الامر")),
+                secondaryButton: .default(Text("اعد المحاولة"), action: completion)
+            )
+        }
+    }
 }

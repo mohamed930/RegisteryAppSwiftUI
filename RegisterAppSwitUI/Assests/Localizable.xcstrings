@@ -188,6 +188,12 @@
     "Password Confirmation" : {
 
     },
+    "Please Enter Commercial record" : {
+
+    },
+    "Please Enter Quater id" : {
+
+    },
     "Please input average of credit transaction in last 6 months" : {
       "localizations" : {
         "ar" : {
@@ -271,6 +277,7 @@
 
     },
     "Please input your commercial Record number" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -291,6 +298,7 @@
       }
     },
     "Please input your Qatar ID Number" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -299,6 +307,9 @@
           }
         }
       }
+    },
+    "Please Wait" : {
+
     },
     "Pleaser enter the verification code\nsent to your mobile number" : {
 
@@ -392,6 +403,12 @@
         }
       }
     },
+    "The Commercial Registration number is Expire" : {
+
+    },
+    "The User has no relation with the corporate" : {
+
+    },
     "Total Annual Revenue" : {
       "localizations" : {
         "ar" : {
@@ -411,6 +428,9 @@
           }
         }
       }
+    },
+    "User already created" : {
+
     },
     "User Information" : {
       "localizations" : {
@@ -447,6 +467,12 @@
           }
         }
       }
+    },
+    "اعد المحاولة" : {
+
+    },
+    "الغاء الامر" : {
+
     }
   },
   "version" : "1.0"

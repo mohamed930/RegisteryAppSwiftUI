@@ -12,14 +12,17 @@ struct TextComponents: View {
     let title: String
     let placeHolder: String
     @Binding var txt: String
+    let errorLabel: String
+    @Binding var errorFlag: Bool
     var keyBoardType: UIKeyboardType = .default
     var maximumChar: Int
     var calenderType: Bool
     var masked: Bool
     var password: Bool
     @FocusState private var isTextFieldFocused: Bool
+    var callBack: (() -> ())?
     
-    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false,masked: Bool = false,password: Bool = false) {
+    init(title: String, placeHolder: String, txt: Binding<String>, keyBoardType: UIKeyboardType = .default,maximumChar: Int = 200,calenderType: Bool = false,masked: Bool = false,password: Bool = false,errorLabel: String = "",errorFlag: Binding<Bool> = .constant(true),callBack: (() ->())? = nil) {
         self.title = title
         self.placeHolder = placeHolder
         self._txt = txt
@@ -28,6 +31,9 @@ struct TextComponents: View {
         self.calenderType = calenderType
         self.masked = masked
         self.password = password
+        self.errorLabel = errorLabel
+        self._errorFlag = errorFlag
+        self.callBack = callBack
     }
     
     var body: some View {
@@ -78,6 +84,14 @@ struct TextComponents: View {
                                         // end editing...
                                         txt = keyBoardType == .phonePad ? txt.mobileMasked : txt.emailMasked
                                     }
+                                    
+                                    if isFocused {
+                                        errorFlag = false
+                                    }
+                                    
+                                    if !isFocused {
+                                        callBack?()
+                                    }
                                 }
                         }
                         
@@ -87,6 +101,12 @@ struct TextComponents: View {
                 }
             
             Divider()
+            
+            if errorFlag {
+                Text(errorLabel)
+                    .setFont(fontName: .regular, size: 12)
+                    .foregroundStyle(Color.FB_0007)
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ struct WelcomeView: View {
     
     @EnvironmentObject var navManager: NavigationManager
     
+    @StateObject var data = UserDataModel()
+    
     var body: some View {
         NavigationStack(path: $navManager.path) {
             
@@ -51,15 +53,19 @@ struct WelcomeView: View {
                 .navigationDestination(for: NavigationManager.Route.self) { route in
                     switch route {
                         case .firstStep:
-                            FirstStepView()
+                            FirstStepView(userData: data)
                         case .secondStep:
-                            SecondStepView()
+                        SecondStepView(viewModel: SecondStepViewModel(data: data))
+                                .environmentObject(data)
                         case .thirdStep:
                             ThirdStepView()
+                                .environmentObject(data)
                         case .forthStep:
                             FourthStepView()
+                                .environmentObject(data)
                         case .fifthStep:
                             FifthStepView()
+                                .environmentObject(data)
                         case .sixthStep:
                             SixthStepView()
                     }

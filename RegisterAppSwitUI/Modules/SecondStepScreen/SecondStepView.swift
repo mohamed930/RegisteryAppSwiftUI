@@ -9,6 +9,12 @@ import SwiftUI
 
 struct SecondStepView: View {
     @EnvironmentObject var navManager: NavigationManager
+    @EnvironmentObject var userData: UserDataModel
+    @StateObject var viewModel: SecondStepViewModel
+    
+    init(viewModel: SecondStepViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         
@@ -52,10 +58,13 @@ struct SecondStepView: View {
             }
             .background(Color.F_4_F_4_F_4)
         }
+        .onAppear {
+            viewModel.printData()
+        }
     }
 }
 
 #Preview {
-    SecondStepView()
+    SecondStepView(viewModel: SecondStepViewModel(data: UserDataModel()))
         .environmentObject(NavigationManager())
 }
