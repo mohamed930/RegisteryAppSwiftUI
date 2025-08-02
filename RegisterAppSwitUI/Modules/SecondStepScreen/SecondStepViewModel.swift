@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 class SecondStepViewModel: ObservableObject {
+    
+    @Published var selectedImage: UIImage?
+    @Published var isPickerPresented: Bool = false
     
     private var data: UserDataModel
 
@@ -17,5 +21,13 @@ class SecondStepViewModel: ObservableObject {
     
     func printData() {
         print(data)
+    }
+    
+    func openGallery() {
+        isPickerPresented = true
+    }
+
+    func setImage(_ image: UIImage?) {
+        selectedImage = image
     }
 }

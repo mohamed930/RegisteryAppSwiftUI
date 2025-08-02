@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D304DFEA2E38F31400708C5D /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D304DFE92E38F31400708C5D /* RappleProgressHUD */; };
 		D319C8582E0BEC680084E865 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D319C8572E0BEC680084E865 /* IQKeyboardManagerSwift */; };
+		D336D7982E3BB06B0029B7A1 /* FittedSheetsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D336D7972E3BB06B0029B7A1 /* FittedSheetsSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D336D7982E3BB06B0029B7A1 /* FittedSheetsSwiftUI in Frameworks */,
 				D319C8582E0BEC680084E865 /* IQKeyboardManagerSwift in Frameworks */,
 				D304DFEA2E38F31400708C5D /* RappleProgressHUD in Frameworks */,
 			);
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				D319C8572E0BEC680084E865 /* IQKeyboardManagerSwift */,
 				D304DFE92E38F31400708C5D /* RappleProgressHUD */,
+				D336D7972E3BB06B0029B7A1 /* FittedSheetsSwiftUI */,
 			);
 			productName = RegisterAppSwitUI;
 			productReference = D342AAE72E0A8DF90001DE90 /* RegisterAppSwitUI.app */;
@@ -120,6 +123,7 @@
 			packageReferences = (
 				D319C8562E0BEC680084E865 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				D304DFE82E38F31400708C5D /* XCRemoteSwiftPackageReference "RappleProgressHUD" */,
+				D336D7962E3BB06B0029B7A1 /* XCRemoteSwiftPackageReference "FittedSheets-SwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D342AAE82E0A8DF90001DE90 /* Products */;
@@ -286,6 +290,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RegisterAppSwitUI/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need gallery to upload commercial record";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need gallery to upload commercial record";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -322,6 +328,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RegisterAppSwitUI/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need gallery to upload commercial record";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need gallery to upload commercial record";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -385,6 +393,14 @@
 				minimumVersion = 8.0.1;
 			};
 		};
+		D336D7962E3BB06B0029B7A1 /* XCRemoteSwiftPackageReference "FittedSheets-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jeonhui/FittedSheets-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -397,6 +413,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D319C8562E0BEC680084E865 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		D336D7972E3BB06B0029B7A1 /* FittedSheetsSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D336D7962E3BB06B0029B7A1 /* XCRemoteSwiftPackageReference "FittedSheets-SwiftUI" */;
+			productName = FittedSheetsSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

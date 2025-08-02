@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import FittedSheetsSwiftUI
+import FittedSheets
 
 struct SecondStepView: View {
     @EnvironmentObject var navManager: NavigationManager
     @EnvironmentObject var userData: UserDataModel
+    
     @StateObject var viewModel: SecondStepViewModel
+    @StateObject private var sheetManager = CustomSheetManager()
     
     init(viewModel: SecondStepViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -43,6 +47,23 @@ struct SecondStepView: View {
                         .overlay {
                             addOverlay()
                         }
+                        .onTapGesture {
+                            sheetManager.present {
+                                OptionSheetComponets(model: [
+                                    MenuOption(id: 1,title: "From Camera", imge: "Camera"),
+                                    MenuOption(id: 2,title: "From Gallery", imge: "Gallery"),
+                                    MenuOption(id: 3, title: "From Files", imge: "Files")
+                                ]) { option in
+                                    switch option {
+                                    case 1:
+                                        break
+                                    case 2:
+                                        viewModel.openGallery()
+                                    default: break
+                                    }
+                                }
+                            }
+                        }
                         
                         MainButton(buttonTitle: String(localized: "PROCEED")) {
                             navManager.path.append(.thirdStep)
@@ -57,9 +78,14 @@ struct SecondStepView: View {
                 Spacer()
             }
             .background(Color.F_4_F_4_F_4)
-        }
-        .onAppear {
-            viewModel.printData()
+            .fittedSheet(isPresented: $sheetManager.isPresented,
+                         configuration: sheetManager.configuration,
+                         sheetView: {sheetManager.content},
+                         animated: false)
+            .sheet(isPresented: $viewModel.isPickerPresented) {
+                // Keep ImagePicker alive via binding
+                ImagePicker(image: $viewModel.image)
+            }
         }
     }
 }
